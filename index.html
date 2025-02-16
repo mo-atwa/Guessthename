@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Guess the Name</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1></h1>
+    <h2></h2>
     <div class="container">
       <div class="game-area">
         <div class="input"></div>
@@ -18,18 +18,17 @@
         <div class="message"></div>
       </div>
       <div class="keys">
-        <h2 class="text">Key Colors</h2>
-        <div class="key-color">
-          <div class="key-place in-place"></div>
-          <div class="key-text">Letter is right and in place</div>
-        </div>
-        <div class="key-color">
-          <div class="key-place not-place"></div>
-          <div class="key-text">Letter is right BUT not in place</div>
-        </div>
-        <div class="key-color">
-          <div class="key-place no"></div>
-          <div class="key-text">Letter is wrong</div>
+        <div class="text"><span class="info">></span>Key Colors</div>
+        <div class="allkeys">
+          <div class="key-color in-place">
+            <div class="key-text">Letter is right and in place</div>
+          </div>
+          <div class="key-color not-place">
+            <div class="key-text">Letter is right BUT not in place</div>
+          </div>
+          <div class="key-color no">
+            <div class="key-text">Letter is wrong</div>
+          </div>
         </div>
       </div>
     </div>

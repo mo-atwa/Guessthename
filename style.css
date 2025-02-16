@@ -1,161 +1,202 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --main-color-right: #17b98a;
   --main-color-midel: #f99b14;
   --main-color-wrong: rgb(145, 0, 0);
 }
+
 body {
   margin: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #ededed;
   color: black;
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
-h1 {
+
+h2 {
   display: flex;
   justify-content: center;
   background-color: white;
   margin: 0 0 20px;
   padding: 10px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
+
 .container {
-  /* background-color: #3333336a; */
+  position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  width: 1000px;
+  width: 100%;
+  max-width: 1160px;
   margin: auto;
-  .game-area {
-    margin-top: 20px;
-    text-align: center;
-    .disabled-input {
-      opacity: 0.6;
-      pointer-events: none;
-    }
-    .input div {
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      span {
-        color: black;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      input {
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        width: 55px;
-        height: 50px;
-        margin-left: 10px;
-        border: none;
-        border-bottom: solid;
-        caret-color: #333;
-        border-radius: 11px;
-        &:focus {
-          border: none;
-          outline: none;
-        }
-      }
-      .yes-in-place {
-        border-color: var(--main-color-right);
-        border-width: 6px;
-        display: block;
-      }
-      .not-in-place {
-        border-color: var(--main-color-midel);
-        border-width: 6px;
-      }
-      .wrong {
-        border-color: var(--main-color-wrong);
-        border-width: 6px;
-      }
-    }
-    .control {
-      button {
-        height: 45px;
-        font-size: x-large;
-        font-weight: bold;
-        border: none;
-        color: white;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      .check {
-        width: calc(70% - 5px);
-        background-color: #d20000;
-      }
-      .hint {
-        width: 30%;
-        background-color: #249f9a;
-      }
-      button:disabled {
-        background-color: #333;
-        opacity: 0.5;
-        cursor: no-drop;
-      }
-    }
-    .message {
-      margin: 10px;
-      margin-bottom: 55px;
-      border-radius: 15px;
-      h3 {
-        margin: 15px;
-        margin-bottom: 3px;
-        text-align: left;
-        font-size: 25px;
-        font-weight: 700;
-      }
-      p {
-        margin: 0;
-        margin-bottom: 15px;
-        font-size: 18px;
-        font-weight: 100;
-        span {
-          margin-left: 1px;
-          font-size: 20px;
-          font-weight: bold;
-        }
-      }
-    }
+  padding: 0 15px;
+  flex-wrap: wrap;
+}
+
+.game-area {
+  margin-top: 20px;
+  text-align: center;
+  width: 70%;
+}
+
+.disabled-input {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.input div {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.input div span {
+  color: black;
+  font-size: clamp(1.2rem, 3vw, 1.875rem);
+  font-weight: bold;
+}
+
+.input div input {
+  font-size: clamp(1.2rem, 3vw, 1.875rem);
+  font-weight: bold;
+  text-align: center;
+  width: clamp(40px, 8vw, 55px);
+  height: clamp(35px, 8vw, 50px);
+  margin-left: 10px;
+  border: none;
+  border-bottom: solid;
+  caret-color: #333;
+  border-radius: 11px;
+  margin-bottom: 6px;
+}
+
+.input div input:focus {
+  border: none;
+  outline: none;
+}
+
+.yes-in-place {
+  border-color: var(--main-color-right) !important;
+  border-width: 6px !important;
+}
+.not-in-place {
+  border-color: var(--main-color-midel) !important;
+  border-width: 6px !important;
+}
+.wrong {
+  border-color: var(--main-color-wrong) !important;
+  border-width: 6px !important;
+}
+
+.control {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.control button {
+  height: 45px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: bold;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+.control .check {
+  width: calc(40% - 5px);
+  background-color: #d20000;
+}
+
+.control .hint {
+  width: 20%;
+  background-color: #249f9a;
+}
+
+.control button:disabled {
+  background-color: #333;
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.message {
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  transform: translateX(-50%);
+  width: 40%;
+}
+
+.message h3 {
+  margin: 15px;
+  margin-bottom: 3px;
+  text-align: left;
+  font-size: clamp(1.2rem, 3vw, 1.5625rem);
+  font-weight: 700;
+}
+
+.message p {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 100;
+}
+
+.message p span {
+  margin-left: 1px;
+  font-size: clamp(1.1rem, 2.7vw, 1.25rem);
+  font-weight: bold;
+}
+
+.keys {
+  width: 30%;
+  padding: 5px;
+}
+
+.text {
+  margin-bottom: 15px;
+  text-align: center;
+font-size: 30px;
+    font-weight: bold;
+  span {
+    display: none;
   }
-  .keys {
-    width: 44%;
-    padding-left: 5px;
-    .text {
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    .key-color {
-      background-color: white;
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      margin-bottom: 10px;
-      .key-place {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 10px;
-        margin-left: 10px;
-        border-radius: 40%;
-        transform: translate(0, 20%);
-        &.in-place {
-          background-color: var(--main-color-right);
-        }
-        &.not-place {
-          background-color: var(--main-color-midel);
-        }
-        &.no {
-          background-color: var(--main-color-wrong);
-        }
-      }
-      .key-text {
-        font-size: large;
-        margin-left: 5px;
-      }
-    }
-  }
+}
+
+.key-color {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+border-bottom: solid 12px;
+}
+
+.key-color.in-place {
+  border-color: var(--main-color-right);
+}
+
+.key-color.not-place {
+  border-color: var(--main-color-midel);
+}
+
+.key-color.no {
+  border-color: var(--main-color-wrong);
+}
+
+.key-text {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  margin-left: 5px;
 }
 
 footer {
@@ -167,8 +208,120 @@ footer {
   padding: 10px;
   background-color: #333;
   color: rgb(213, 213, 213);
+}
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 11px 10px;
+  background-color: #333;
+  color: rgb(213, 213, 213);
+font-size: 21px;
   span {
-    color: white;
+    color: #009688;
     font-weight: bold;
+cursor: pointer;
+text-decoration: underline;
   }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input div {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .keys {
+    order: -1;
+    width: 100%;
+  }
+
+  .game-area {
+    width: 100%;
+  }
+
+  .message {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --spacing-md: 10px;
+    --spacing-lg: -5px;
+  }
+
+  h2 {
+    margin: 0;
+    margin: 0 0 10px;
+  }
+
+  .control {
+    flex-direction: column;
+  }
+
+  .control button {
+    width: 100% !important;
+  }
+
+  .input div {
+    margin-bottom: 8px;
+}
+
+  .input div span {
+    font-size: var(--font-size-md);
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .input div input {
+    width: clamp(35px, 7vw, 45px);
+    height: clamp(35px, 7vw, 45px);
+  }
+
+  .text {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -20%;
+    border-radius: 22px;
+    background-color: #289f9a4d;
+    padding: 10px 0;
+    .info {
+      display: block;
+      padding: 0 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+  }
+
+  .allkeys {
+    display: none;
+    transition: all 1.5s ease !important;
+  }
+
+  .keys {
+    padding: 0;
+  }
+
+  .message {
+    width: 80%;
+  }
+
+footer {
+  font-size: 18px;
+}
 }

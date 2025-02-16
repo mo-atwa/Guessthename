@@ -1,14 +1,18 @@
 // let test = document.querySelector("")
 
-let theName = "Guess the player";
-document.querySelector("h1").innerText = theName;
+let theName = "Guess the Name";
+document.querySelector("h2").innerText = theName;
 document.querySelector(
   "footer"
-).innerHTML = `${theName} created by <span>Mohamed Atwa</span>`;
+).innerHTML = `Guess the Name created by <span id="atwa">ATWA</span>`;
+
+document.getElementById("atwa").addEventListener("click", function () {
+  window.open("https://atwa-portfolio.netlify.app/", "_blank");
+});
 document.querySelector(".input");
 
 //Setting game options
-let numberOfTries = 5;
+let numberOfTries = 4;
 let currentTry = 1;
 let numberOfHint = 3;
 
@@ -66,6 +70,41 @@ function generateInput() {
     }
   }
   inputsContainer.children[0].children[1].focus();
+
+  //manage Key colors
+let text = document.querySelector(".text");
+let info = document.querySelector(".info");
+let allKeys = document.querySelectorAll(".allkeys");
+
+// Function to check screen width and execute the code only if <= 480px
+function handleClick() {
+  if (window.matchMedia("(max-width: 480px)").matches) {
+    allKeys.forEach((key) => {
+      if (key.style.display === "block") {
+        key.style.display = "none";
+        info.style.transform = "rotate(0)";
+      } else {
+        key.style.display = "block";
+        info.style.transform = "rotate(90deg)";
+      }
+    });
+  }
+}
+
+// Add the event listener only if screen width is <= 480px
+if (window.matchMedia("(max-width: 480px)").matches) {
+  text.addEventListener("click", handleClick);
+}
+
+// Update event listener when resizing the screen
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(max-width: 480px)").matches) {
+    text.addEventListener("click", handleClick);
+  } else {
+    text.removeEventListener("click", handleClick);
+  }
+});
+
 
   //Disable all input except frist one
   const inputDisabledDiv = document.querySelectorAll(".disabled-input input");
@@ -127,14 +166,35 @@ function hamdleGuess() {
     const allTrys = document.querySelectorAll(".input > div");
     allTrys.forEach((tryDiv) => tryDiv.classList.add("disabled-input"));
 
-    // add win massage
-    const massage = document.querySelector(".message");
-    massage.innerHTML = `<h3>Congratulations! 🎉</h3> <p>You find the word <span>${wordToGuess}</span> </p>`;
-    massage.style.cssText = `
+    // add win message
+    const message = document.querySelector(".message");
+    message.innerHTML = `<h3>Congratulations! 🎉</h3> <p>You found the word <span>${wordToGuess}</span> </p>`;
+    message.style.cssText = `
       background-color: #f0fdf4;
       color: #16a34a;
       border: solid #bbf7d0 1px;
     `;
+
+    // add refresh button
+    const refreshButton = document.createElement("button");
+    refreshButton.innerText = "Play Again";
+    refreshButton.style.cssText = `
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    `;
+    refreshButton.addEventListener("click", () => {
+      location.reload();
+    });
+    message.appendChild(refreshButton);
 
     //Disabled buttons
     guessButton.disabled = true;
@@ -163,14 +223,35 @@ function hamdleGuess() {
       guessButton.disabled = true;
       hintButton.disabled = true;
 
-      // add lose massage
-      const massage = document.querySelector(".message");
-      massage.innerHTML = `<h3>Game Over! </h3> <p>You didn't find the word <span>${wordToGuess}</span> </p>`;
-      massage.style.cssText = `
+      // add lose message
+      const message = document.querySelector(".message");
+      message.innerHTML = `<h3>Game Over! </h3> <p>You didn't find the word <span>${wordToGuess}</span> </p>`;
+      message.style.cssText = `
          background-color: #fef2f2;
          color: #dc2626;
          border: 1px solid #fecaca;
-    `;
+      `;
+
+      // add refresh button
+      const refreshButton = document.createElement("button");
+      refreshButton.innerText = "Play Again";
+      refreshButton.style.cssText = `
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+      `;
+      refreshButton.addEventListener("click", () => {
+        location.reload();
+      });
+      message.appendChild(refreshButton);
     }
   }
 }
