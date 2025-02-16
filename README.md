@@ -2,7 +2,7 @@
 A dynamic sports trivia game built with **HTML, CSS, and JavaScript**. Challenge yourself to identify famous players based on stats, achievements, and images! Perfect for sports enthusiasts looking for an engaging quiz experience. 🏆
 
 🎮 **Live Demo:** [Play Now](https://guessthename-atwa.netlify.app/)  
-📂 **GitHub Repository:** [Here](https://mo-atwa.github.io/Guessthename/)
+📂 **GitHub Repository:** [Here](https://github.com/mo-atwa/Guessthename)
 
 ## ✨ Features
 - 🎯 **Player Clues** – Get hints through stats, career highlights, and player images.
