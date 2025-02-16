@@ -1,17 +1,31 @@
-# Guess the Player Game
+# 🎮 Guess the Name Game 
+A dynamic sports trivia game built with **HTML, CSS, and JavaScript**. Challenge yourself to identify famous players based on stats, achievements, and images! Perfect for sports enthusiasts looking for an engaging quiz experience. 🏆
 
-This is an interactive "Guess the Player" game built using HTML, CSS, and JavaScript. Test your knowledge of famous players by identifying them based on clues, images, or stats. Perfect for sports enthusiasts looking for a fun and challenging trivia experience!
+🎮 **Live Demo:** [Play Now](https://guessthename-atwa.netlify.app/)  
+📂 **GitHub Repository:** [Here](https://mo-atwa.github.io/Guessthename/)
 
-## Features
+## ✨ Features
+- 🎯 **Player Clues** – Get hints through stats, career highlights, and player images.
+- ✅ **Dynamic Feedback** – Receive instant feedback on your guesses.
+- 📊 **Score Tracking** – Monitor your progress and challenge your sports knowledge.
+- 🎨 **Customizable Content** – Add your favorite players and create personalized categories.
+- 📱 **Responsive Design** – Play seamlessly across all devices, from desktop to mobile.
 
-- **Player Clues**: Provides hints such as stats, achievements, or images to help players guess the correct answer.  
-- **Dynamic Feedback**: Players receive immediate feedback on whether their guesses are correct or incorrect.  
-- **Score Tracking**: Keeps track of correct guesses to challenge players to improve their score.  
-- **Customizable Content**: Add your favorite players, clues, or categories for a personalized experience.  
-- **Responsive Design**: Designed to work seamlessly across various devices, including desktops, tablets, and mobile phones.  
+## 🛠 Technologies Used
+- **HTML** 📜 – Structures the game interface and elements.
+- **CSS** 🎨 – Styles the game for a visually appealing experience.
+- **JavaScript** 🚀 – Powers the game logic, clue system, and scoring.
+  
+----------
 
-## Technologies Used
+## 🌟 About Me  
 
-- **HTML**: Structures the game layout and elements.  
-- **CSS**: Styles the interface, ensuring a visually appealing design.  
-- **JavaScript**: Handles the game logic, clue interactions, and scorekeeping.  
+Hey! I'm Mohamed Atwa, a Front-End Developer with a passion for crafting sleek and responsive web applications using React.js. I'm always eager to learn and take on new challenges.  
+
+🚀 **Portfolio:** [Visit Here](https://atwa-portfolio.netlify.app)  
+📂 **GitHub:** [Check My Projects](https://github.com/mo-atwa)  
+📄 **Resume (CV):** [View Here](https://drive.google.com/file/d/1oH9P8n6Gb4Hv0qNAXYkjiC-fvSW14jEb/view)  
+
+---  
+
+💡 *Feel free to contribute, report issues, or give feedback!* 😊
